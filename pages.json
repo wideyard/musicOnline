@@ -1,0 +1,53 @@
+{
+  "pages": [{
+    "path": "pages/home/home",
+    "style": {
+
+    }
+
+  }, {
+    "path": "pages/game/game",
+    "style": {
+
+    }
+
+  }, {
+    "path": "pages/guest/guest",
+    "style": {
+
+    }
+
+  }],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "掌上乐坊",
+    "navigationBarBackgroundColor": "#13227a",
+    "backgroundColor": "#F8F8F8",
+    "app-plus": {
+      "background": "#efeff4"
+    }
+  },
+  "tabBar": {
+    "selectedColor": "#13227a",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "乐坊",
+        "iconPath": "static/sousuo.png",
+        "selectedIconPath": "static/sousuo (1).png"
+      },
+      {
+        "pagePath": "pages/game/game",
+        "text": "游戏",
+        "iconPath": "static/youxi.png",
+        "selectedIconPath": "static/youxi (1).png"
+      },
+      {
+        "pagePath": "pages/guest/guest",
+        "text": "个人",
+        "iconPath": "static/youxidian.png",
+        "selectedIconPath": "static/youxidian (1).png"
+      }
+    ]
+  }
+}
