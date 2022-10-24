@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "pages": [{
     "path": "pages/home/home",
     "style": {
@@ -30,8 +29,7 @@
   },
   "tabBar": {
     "selectedColor": "#13227a",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/home/home",
         "text": "乐坊",
         "iconPath": "static/sousuo.png",
@@ -51,21 +49,4 @@
       }
     ]
   }
-=======
-	"pages": [{
-		"path": "pages/index/index",
-		"style": {
-			"navigationBarTitleText": "uni-app"
-		}
-	}],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8",
-		"app-plus": {
-			"background": "#efeff4"
-		}
-	}
->>>>>>> 5d0e067ae68b85eead6f32181275e1c72f54a233
 }
