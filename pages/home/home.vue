@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <view class="home">
     <swiper :indicator-dots="true" :autoplay="true" :interval="2500" :duration="1000" :circular="true">
       <!-- 循环遍历数组 -->
@@ -26,28 +25,25 @@
   </view>
 </template>
 -->
-=======
-  <view>
-    Home
-  </view>
+<view>
+  Home
+</view>
 </template>
 
->>>>>>> b7116c8719907cb4d4b1c3fe1d817a548d684674
 <script>
   export default {
     data() {
       return {
-<<<<<<< HEAD
         // 头条轮播
-        swipers:[
-        					'https://hakaimg.com/i/2022/10/25/puolq.jpg',
-        					'https://hakaimg.com/i/2022/10/25/putua.jpg',
-        					'https://hakaimg.com/i/2022/10/25/pv0lf.jpg',
-        				]
+        swipers: [
+          'https://hakaimg.com/i/2022/10/25/puolq.jpg',
+          'https://hakaimg.com/i/2022/10/25/putua.jpg',
+          'https://hakaimg.com/i/2022/10/25/pv0lf.jpg',
+        ]
 
 
       };
-    },
+    }
 
     //onLoad() {
     //  this.getSwiperlist()
@@ -67,16 +63,11 @@
     //    this.swiperList = res.message
     //  }
     //}
-=======
-        
-      };
-    }
->>>>>>> b7116c8719907cb4d4b1c3fe1d817a548d684674
+    //};
   }
 </script>
 
 <style lang="scss">
-<<<<<<< HEAD
   swiper {
     height: 400rpx;
 
@@ -86,7 +77,4 @@
       height: 100%;
     }
   }
-=======
-
->>>>>>> b7116c8719907cb4d4b1c3fe1d817a548d684674
 </style>
