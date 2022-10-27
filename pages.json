@@ -18,6 +18,62 @@
     }
 
   }],
+  "subPackages": [{
+          "root": "pagesA",
+          "pages": [{
+              "path": "news/news",
+              "style": {}
+          }]
+      }, {
+          "root": "pagesA",
+          "pages": [{
+              "path": "news/newsbox",
+              "style": {}
+          }]
+      }, {
+          "root": "pagesA",
+          "pages": [{
+              "path": "news/new1",
+              "style": {}
+          }]
+      }, {
+          "root": "pagesA",
+          "pages": [{
+              "path": "news/new2",
+              "style": {}
+          }]
+      }, {
+          "root": "pagesA",
+          "pages": [{
+              "path": "news/new3",
+              "style": {}
+          }]
+      }],
+    "preloadRule": {
+        "pagesA/news/news":{ 
+			"network": "all",
+            "packages": ["__APP__"]
+        },
+		"pagesA/news/newsbox":{
+			"network": "all",
+		    "packages": ["__APP__"]
+		},
+		"pagesA/news/new1":{
+			"network": "all",
+		    "packages": ["__APP__"]
+		},
+		"pagesA/news/new2":{
+			"network": "all",
+		    "packages": ["__APP__"]
+		},
+		"pagesA/news/new3":{
+			"network": "all",
+		    "packages": ["__APP__"]
+		}
+        
+    },
+	  
+	  
   "globalStyle": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "掌上乐坊",

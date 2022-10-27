@@ -1,105 +1,40 @@
-<<<<<<< HEAD
-<script>
-export default {
-	data() {
-		return {
-			message: '',
-			dataObj: []
-			}
-	},
-	methods: {
-		display(){
-			console.log(this.message);
-		},
-		
-		//查询记录
-		getData(){
-			
-			const db=wx.cloud.database();
-			db.collection("strings").get({
-				success:res=>{
-					console.log(res)
-					this.dataObj = res.data;
-				}
-		    })
-			
-		},
-		
-		  //添加数据
-		addData(){
-			const db=wx.cloud.database();
-		    db.collection("strings").add({
-		    data:{
-		      title:"good luck"
-		    }
-		    }).then(res=>{
-		      console.log(res)
-		    })
-		},
-		
-
-		//提交信息
-		submit(){
-			const db=wx.cloud.database();
-			db.collection('strings').add({
-		    data:{
-		      title:this.message,
-		    },
-		    success(res)
-		    {
-		      console.log("提交成功",res);
-		    },
-		    fail(err)
-		    {
-		      console.log("失败",err);
-		    }
-		    })
-		},
-	}
-	
-};
-
-</script>
-
 <template>
-	<div>
-		<view style="text-align: center;">
-		   Home
-		 </view>
-		<h1 style="text-align: center;font-size: 25px;">Message:</h1>
-		<input  type="text" v-model="message" placeholder="edit me" style="text-align: center;height: 70px;font-size: 30px"/>
-		<button v-on:click="submit" style="">输入</button> 
-		<button type="primary" v-on:click="getData">点击显示数据库</button>
-		<li v-for="item in dataObj" style="text-align: center;">{{ item.title }}</li>
-	</div>
-</template>
-
-</script>
-
-<style lang="scss">
-
-</style> -->
-=======
-<template>
-  <view class="home">
+<view class="home">
     <swiper :indicator-dots="true" :autoplay="true" :interval="2500" :duration="1000" :circular="true">
-      <!-- 循环遍历数组 -->
-      <swiper-item v-for="item in swipers">
-        <image :src="item"></image>
+      <!--循环遍历数组 -->
+	  <swiper-item v-for="item in swipers" >
+        <!-- <image :src="item.images" url= "item.url" @click="OnJump(item.url)"></image> -->
+		<image :src="item.images" @click.native="OnJump(item.url)"></image>
       </swiper-item>
     </swiper>
-  </view>
+	
+	
+	<!-- 导航区 -->
+	<view class="container">
+		<view class="image" v-for="item in logos"> 
+			<image :src="item.images"  :url= "item.url" @click="Jump()" class="image" :mode="widthFix"></image>
+			<view>
+				<text >{{item.text}}</text>
+			</view>
+		</view>
+				
+	
+	</view>
+	
+	
+	
+</view> 
 </template>
 
-<!-- 动态绑定 -->
+<!-- 动态绑定
 <!--<template>
   <view>
-    <!-- 轮播图区域 -->
+    <!-- 轮播图区域
 <!--    <swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
-     <!-- 循环渲染轮播图的 item 项 -->
+     <!-- 循环渲染轮播图的 item 项
 <!--      <swiper-item v-for="(item, i) in swiperList" :key="i">
         <view class="swiper-item">
-          <!-- 动态绑定图片的 src 属性 -->
+          <!-- 动态绑定图片的 src 属性
 <!--          <image :src="item.image_src"></image>
         </view>
       </swiper-item>
@@ -113,15 +48,68 @@ export default {
       return {
         // 头条轮播
         swipers:[
-        					'https://hakaimg.com/i/2022/10/25/puolq.jpg',
-        					'https://hakaimg.com/i/2022/10/25/putua.jpg',
-        					'https://hakaimg.com/i/2022/10/25/pv0lf.jpg',
-        				]
-
-
-      };
+			{
+				images:'https://hakaimg.com/i/2022/10/25/h0ylwj.png',
+				url:'/pagesA/news/new1'
+			},
+			{
+				images:'https://hakaimg.com/i/2022/10/25/h1jhsm.png',
+				url:'/pagesA/news/new2'
+			},
+			{
+				images:'https://hakaimg.com/i/2022/10/25/h1hbo1.png',
+				url:'/pagesA/news/new3'
+			}
+        					// 'https://hakaimg.com/i/2022/10/25/puolq.jpg',
+        					// 'https://hakaimg.com/i/2022/10/25/putua.jpg',
+        					// 'https://hakaimg.com/i/2022/10/25/pv0lf.jpg',
+        ],
+		
+		logos:[
+			{
+				images:'https://hakaimg.com/i/2022/10/26/hd5h2f.png',
+				url:'/pagesA/news/news',
+				text:'新闻'
+			},
+			{
+				images:'https://hakaimg.com/i/2022/10/26/hd5hgo.png',
+				url:'/pagesA/news/news',
+				text:'旅游'
+			},
+			{
+				images:'https://hakaimg.com/i/2022/10/26/hd5ibe.png',
+				url:'/pagesA/news/news',
+				text:'影像'
+			},
+			{
+				images:'https://hakaimg.com/i/2022/10/26/hd5qxi.png',
+				url:'/pagesA/news/news',
+				text:'机构'
+			}
+		]
+      }
     },
+	
+	methods: {
+		//跳转到详情页
+		OnJump(url){ //点击图片触发的事件
+			console.log(url)
+			uni.redirectTo({
+		    //uni.navigateTo({ // 不关闭当前页面，跳转到非tarber页面
+		        url: url
+		    })
+		},
+		
+		Jump(){
+			uni.redirectTo({url:"/pagesA/news/news"});
+		}
+		
+	},
+}
+</script>
 
+	
+	
     //onLoad() {
     //  this.getSwiperlist()
     //},
@@ -140,8 +128,8 @@ export default {
     //    this.swiperList = res.message
     //  }
     //}
-  }
-</script>
+  
+
 
 <style lang="scss">
   swiper {
@@ -153,5 +141,34 @@ export default {
       height: 100%;
     }
   }
+
+
+.container{
+	display: flex;
+	flex-direction: row; 
+	justify-content: space-around;
+}
+	
+	.image{
+		width:40px;
+		height:40px;
+		text-align: center;
+	}
+	
+	.text{
+		display: flex;
+		flex-direction: row; 
+		font-size: 40rpx;
+		display:inline-block;
+		line-height:100rpx;
+		padding:0 30rpx;
+		color:#333;
+		// &.activate{
+		// 	color:#1E90FF;
+		// }
+	}
+
+
+
+
 </style>
->>>>>>> 541862a7890f25cc396223a36deae1702327cd01
