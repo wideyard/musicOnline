@@ -92,7 +92,7 @@
 <style lang="scss" scoped>
 .navscroll{
 	height: 100rpx;
-	background: #13227a;
+	background: #444d77;
 	//不换行
 	white-space: nowrap;
 	position: fixed;

@@ -1,5 +1,11 @@
 <template>
   <view class="home">
+	  
+	<!-- 背景图 -->
+	<view class="bg" >
+	    <image class="bg-image" mode="scaleToFill"></image>
+	</view>
+	  
 	<!-- 搜索 -->
     <view class="search-box">
       <my-search @click="gotoSearch"></my-search>
@@ -18,9 +24,9 @@
 	<view class="container">
 		<view class="image" v-for="item in logos"> 
 			<image :src="item.images"  :url= "item.url" @click="Jump()" class="image" :mode="widthFix"></image>
-			<view>
-				<text >{{item.text}}</text>
-			</view>
+			
+			<text class="text">{{item.text}}</text>
+			
 		</view>
 	</view>
   </view>
@@ -117,15 +123,20 @@
 
 
 <style lang="scss">
+// 轮播图
   swiper {
-    height: 400rpx;
-
+	width:700rpx;
+    height:300rpx;
+	margin: 0 auto;
+	
     .swiper-item,
     image {
-      width: 100%;
-      height: 100%;
+		border-radius: 50px;
+		width: 100%;
+		height: 100%;
     }
   }
+// 搜索栏
 .search-box {
     // 吸顶
     position: sticky;
@@ -134,7 +145,9 @@
     z-index: 999;
   }
 
+//分类
 .container{
+	font-size: 8px;
 	display: flex;
 	flex-direction: row; 
 	justify-content: space-around;
@@ -147,17 +160,39 @@
 	}
 	
 	.text{
-		display: flex;
-		flex-direction: row; 
-		font-size: 40rpx;
+		// display: flex;
+		// flex-direction: row; 
+		font-size: 30rpx;
 		display:inline-block;
-		line-height:100rpx;
-		padding:0 30rpx;
-		color:#333;
+		line-height:0rpx;
+		//padding:0 20rpx;
+		color:#444d77;
+		//color:#969dbd;
 		// &.activate{
 		// 	color:#1E90FF;
 		// }
 	}
+
+	
+//背景
+.bg{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:url('https://hakaimg.com/i/2022/10/27/ss7du7.jpg') 
+	no-repeat #000;
+	background-size:cover;
+	z-index:-1;
+	opacity: 0.3;
+}
+
+.bg-img{
+    width : 100%;
+    height : 100%;
+	
+}
 
 </style>
 

@@ -79,14 +79,14 @@
 "globalStyle": {
 	"navigationBarTextStyle": "white",
 	"navigationBarTitleText": "掌上乐坊",
-	"navigationBarBackgroundColor": "#13227a",
+	"navigationBarBackgroundColor": "#444d77",
 	"backgroundColor": "#F8F8F8",
 	"app-plus": {
 		"background": "#efeff4"
 	}
 },
 "tabBar": {
-	"selectedColor": "#13227a",
+	"selectedColor": "#444d77",
 	"list": [{
 			"pagePath": "pages/home/home",
 			"text": "乐坊",
