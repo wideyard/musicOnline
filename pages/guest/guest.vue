@@ -1,6 +1,6 @@
 <template>
   <view>
-    Guest
+
   </view>
 </template>
 

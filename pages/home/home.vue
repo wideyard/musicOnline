@@ -1,11 +1,15 @@
 <template>
   <view class="home">
+    <view class="search-box">
+      <my-search @click="gotoSearch"></my-search>
+    </view>
     <swiper :indicator-dots="true" :autoplay="true" :interval="2500" :duration="1000" :circular="true">
       <!-- 循环遍历数组 -->
       <swiper-item v-for="item in swipers">
         <image :src="item"></image>
       </swiper-item>
     </swiper>
+
   </view>
 </template>
 
@@ -25,11 +29,6 @@
   </view>
 </template>
 -->
-<view>
-  Home
-</view>
-</template>
-
 <script>
   export default {
     data() {
@@ -40,10 +39,16 @@
           'https://hakaimg.com/i/2022/10/25/putua.jpg',
           'https://hakaimg.com/i/2022/10/25/pv0lf.jpg',
         ]
-
-
       };
+    },
+    methods: {
+      gotoSearch() {
+        uni.navigateTo({
+          url: '/subpkg/search/search'
+        })
+      }
     }
+
 
     //onLoad() {
     //  this.getSwiperlist()
@@ -63,7 +68,6 @@
     //    this.swiperList = res.message
     //  }
     //}
-    //};
   }
 </script>
 
@@ -76,5 +80,13 @@
       width: 100%;
       height: 100%;
     }
+  }
+
+  .search-box {
+    // 吸顶
+    position: sticky;
+    top: 0;
+    // 防止被轮播图覆盖
+    z-index: 999;
   }
 </style>

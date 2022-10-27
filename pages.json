@@ -18,6 +18,19 @@
     }
 
   }],
+  "subPackages": [{
+    "root": "subpkg",
+    "pages": [{
+                    "path" : "search/search",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
+  }],
   "globalStyle": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "掌上乐坊",
