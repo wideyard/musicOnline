@@ -6,6 +6,7 @@
 			wx.cloud.init({
 				env: 'music-online-3gnasgfa29a0c9fa'
 			})
+
 		},
 		onShow: function() {
 			console.log('App Show')
