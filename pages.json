@@ -1,110 +1,66 @@
 {
-	"pages": [{
-		"path": "pages/home/home",
-		"style": {}
+  "pages": [{
+    "path": "pages/home/home",
+    "style": {
 
-	}, {
-		"path": "pages/game/game",
-		"style": {}
+    }
 
-	}, {
-		"path": "pages/guest/guest",
-		"style": {}
+  }, {
+    "path": "pages/game/game",
+    "style": {
 
-	}],
-	"subPackages": [{
-		"root": "pagesA",
-		"pages": [{
-			"path": "news/news",
-			"style": {}
-		}]
-	}, {
-		"root": "pagesA",
-		"pages": [{
-			"path": "news/newsbox",
-			"style": {}
-		}]
-	}, {
-		"root": "pagesA",
-		"pages": [{
-			"path": "news/new1",
-			"style": {}
-		}]
-	}, {
-		"root": "pagesA",
-		"pages": [{
-			"path": "news/new2",
-			"style": {}
-		}]
-	}, {
-		"root": "pagesA",
-		"pages": [{
-			"path": "news/new3",
-			"style": {}
-		}]
-	}, {
-		"root": "subpkg",
-		"pages": [{
-			"path": "search/search",
-			"style": {}
-		}]
-	}],
+    }
 
-"preloadRule": {
-	"pagesA/news/news": {
-		"network": "all",
-		"packages": ["__APP__"]
-	},
-	"pagesA/news/newsbox": {
-		"network": "all",
-		"packages": ["__APP__"]
-	},
-	"pagesA/news/new1": {
-		"network": "all",
-		"packages": ["__APP__"]
-	},
-	"pagesA/news/new2": {
-		"network": "all",
-		"packages": ["__APP__"]
-	},
-	"pagesA/news/new3": {
-		"network": "all",
-		"packages": ["__APP__"]
-	}
+  }, {
+    "path": "pages/guest/guest",
+    "style": {
 
-},
+    }
 
-
-
-"globalStyle": {
-	"navigationBarTextStyle": "white",
-	"navigationBarTitleText": "掌上乐坊",
-	"navigationBarBackgroundColor": "#13227a",
-	"backgroundColor": "#F8F8F8",
-	"app-plus": {
-		"background": "#efeff4"
-	}
-},
-"tabBar": {
-	"selectedColor": "#13227a",
-	"list": [{
-			"pagePath": "pages/home/home",
-			"text": "乐坊",
-			"iconPath": "static/sousuo.png",
-			"selectedIconPath": "static/sousuo (1).png"
-		},
-		{
-			"pagePath": "pages/game/game",
-			"text": "游戏",
-			"iconPath": "static/youxi.png",
-			"selectedIconPath": "static/youxi (1).png"
-		},
-		{
-			"pagePath": "pages/guest/guest",
-			"text": "个人",
-			"iconPath": "static/youxidian.png",
-			"selectedIconPath": "static/youxidian (1).png"
-		}
-	]
-}
+  }],
+  "subPackages": [{
+    "root": "subpkg",
+    "pages": [{
+                    "path" : "search/search",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
+  }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "掌上乐坊",
+    "navigationBarBackgroundColor": "#444d77",
+    "backgroundColor": "#F8F8F8",
+    "app-plus": {
+      "background": "#efeff4"
+    }
+  },
+  "tabBar": {
+    "selectedColor": "#444d77",
+    "list": [{
+        "pagePath": "pages/home/home",
+        "text": "乐坊",
+        "iconPath": "static/sousuo.png",
+        "selectedIconPath": "static/sousuo (1).png"
+      },
+      {
+        "pagePath": "pages/game/game",
+        "text": "游戏",
+        "iconPath": "static/youxi.png",
+        "selectedIconPath": "static/youxi (1).png"
+      },
+      {
+        "pagePath": "pages/guest/guest",
+        "text": "个人",
+        "iconPath": "static/youxidian.png",
+        "selectedIconPath": "static/youxidian (1).png"
+      }
+    ]
+  }
 }
