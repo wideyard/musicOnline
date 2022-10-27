@@ -14,6 +14,8 @@
       bgcolor: {
         type: String,
         //default: '#ffffff'
+
+        default: '#444d77'
       },
       radius: {
         type: Number,
@@ -39,6 +41,8 @@
 <style lang="scss">
   .my-search-container {
     //background-color: #444d77;
+    background-color: #969dbd;
+
     height: 50px;
     padding: 0 10px;
     display: flex;
