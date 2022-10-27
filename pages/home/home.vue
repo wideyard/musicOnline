@@ -1,5 +1,11 @@
 <template>
-<view class="home">
+  <view class="home">
+	<!-- 搜索 -->
+    <view class="search-box">
+      <my-search @click="gotoSearch"></my-search>
+    </view>
+	
+	<!-- 轮播图 -->
     <swiper :indicator-dots="true" :autoplay="true" :interval="2500" :duration="1000" :circular="true">
       <!--循环遍历数组 -->
 	  <swiper-item v-for="item in swipers" >
@@ -7,7 +13,6 @@
 		<image :src="item.images" @click.native="OnJump(item.url)"></image>
       </swiper-item>
     </swiper>
-	
 	
 	<!-- 导航区 -->
 	<view class="container">
@@ -17,13 +22,8 @@
 				<text >{{item.text}}</text>
 			</view>
 		</view>
-				
-	
 	</view>
-	
-	
-	
-</view> 
+  </view>
 </template>
 
 <!-- 动态绑定
@@ -102,33 +102,18 @@
 		
 		Jump(){
 			uni.redirectTo({url:"/pagesA/news/news"});
+		},
+		gotoSearch() {
+		  uni.navigateTo({
+		    url: '/subpkg/search/search'
+		  })
 		}
 		
-	},
+	}
 }
 </script>
 
-	
-	
-    //onLoad() {
-    //  this.getSwiperlist()
-    //},
-    //methods: {
-    //  async getSwiperlist() {
-    //    const res = await uni.$http.get('里面写你的资源路径 比如/api/public/v1/home/swiperdata')
-    //    // 请求失败
-    //    if (res.meta.status !== 200) {
-    //      return uni.showToast({
-    //        title: '数据请求失败！',
-    //        duration: 1500,
-    //        icon: 'none',
-    //      })
-    //    }
-    //    // 请求成功，为 data 中的数据赋值
-    //    this.swiperList = res.message
-    //  }
-    //}
-  
+    
 
 
 <style lang="scss">
@@ -141,7 +126,13 @@
       height: 100%;
     }
   }
-
+.search-box {
+    // 吸顶
+    position: sticky;
+    top: 0;
+    // 防止被轮播图覆盖
+    z-index: 999;
+  }
 
 .container{
 	display: flex;
@@ -168,7 +159,5 @@
 		// }
 	}
 
-
-
-
 </style>
+
