@@ -1,15 +1,21 @@
 {
 	"pages": [{
 		"path": "pages/home/home",
-		"style": {}
+		"style": {
+			"navigationBarTitleText": "掌上乐坊"
+		}
 
 	}, {
 		"path": "pages/game/game",
-		"style": {}
+		"style": {
+			"navigationBarTitleText": "娱乐中心"
+		}
 
 	}, {
 		"path": "pages/guest/guest",
-		"style": {}
+		"style": {
+			"navigationBarTitleText": "个人中心"
+		}
 
 	}],
 	"subPackages": [{
@@ -48,6 +54,31 @@
 			"path": "search/search",
 			"style": {}
 		}]
+	}, 
+	//历史文章页面
+	{
+		"root": "pagesA",
+		"pages": [{
+			"path": "history/guyue",
+			"style": {
+				"navigationBarTitleText": "古乐纵览"
+			}
+		}, {
+			"path": "history/xiju",
+			"style": {
+				"navigationBarTitleText": "戏剧纵览"
+			}
+		}, {
+			"path": "history/quyi",
+			"style": {
+				"navigationBarTitleText": "曲艺纵览"
+			}
+		}, {
+			"path": "history/detail",
+			"style": {
+				"navigationBarTitleText": "细读历史"
+			}
+		}  ]
 	}],
 
 "preloadRule": {

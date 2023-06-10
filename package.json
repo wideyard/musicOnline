@@ -1,5 +1,5 @@
 {
-  "name": "musicOnline",
+  "name": "musiconline",
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
@@ -12,8 +12,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "@escook/request-miniprogram": "^0.2.1"
-  }
+  },
+  "description": ""
 }

@@ -27,6 +27,23 @@
 			<text class="text">{{item.text}}</text>
 		</view>
 	</view>
+	
+	<!-- 历史文章专区 -->
+	<view class="history">
+		<!-- 分割线 -->
+		<view class="splite">
+			_______历史纵览_______
+		</view>
+		
+		<!-- 进入曲艺、戏剧、古乐的专区 -->
+		<view class="getin" v-for="item in histories">
+			<view :url= "item.url" @click="Jump_history(item.url)" class="content">
+				<text class="title_history">{{item.text}}</text>
+				<image :src="item.images" class="image"></image>
+			</view>
+		</view>
+		
+	</view>
 
   </view>
 </template>
@@ -71,7 +88,24 @@
             url: '/pagesA/news/news',
             text: '机构'
           }
-        ]
+        ],
+		// 跳转到历史文章页面区域，并显示相关的文字图片
+		histories: [{
+		    images: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20190414%2Fc10e9c715dff4e41a6e3ac6967bfbfbe.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669513554&t=75d704ebc7f4cee0bf3ffa39b740dabc',
+		    url: '/pagesA/history/quyi',
+		    text: '曲艺'
+		  },
+		  {
+		    images: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fupload.art.ifeng.com%2F2016%2F0225%2F1456388374423.jpg&refer=http%3A%2F%2Fupload.art.ifeng.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669513405&t=40ce27c6afd6421d3edfdecb2705a5b1',
+		    url: '/pagesA/history/xiju',
+		    text: '戏剧'
+		  },
+		  {
+		    images: 'https://img1.baidu.com/it/u=977355781,1361695817&fm=253&fmt=auto&app=138&f=JPEG?w=823&h=500',
+		    url: '/pagesA/history/guyue',
+		    text: '古乐'
+		  }
+		]
       }
     },
 
@@ -95,7 +129,14 @@
         uni.redirectTo({
           url: "/pagesA/news/news"
         })
-      }
+      },
+	  
+	  Jump_history(to_url) {
+		console.log("进行一个页面跳转的操作", to_url)
+	    uni.redirectTo({
+	      url: to_url
+	    })
+	  }
     },
   }
 </script>
@@ -174,4 +215,41 @@
 	
 }
 
+
+// 历史文章专区
+.history {
+	font-size: 30px;
+	padding: 30rpx;
+	display: flex;
+	flex-direction: column; 
+	justify-content: center;
+	align-items: center;
+	.splite {
+		color:#444d77;
+	}
+	// 进入历史文章专栏的三个版块
+	.getin {
+		font-size: 30px;
+		padding: 30rpx;
+		display: flex;
+		flex-direction: column; 
+		justify-content: center;
+		align-items: center;
+		.content {
+			display: flex;
+			flex-direction: row; 
+			justify-content: space-around;
+			align-items: center;
+			.title_history {
+				font-size: 25px;
+				color: #363950;
+			}
+			.image {
+				width: 620rpx;
+				height: 300rpx;
+				border-radius: 30px;
+			}
+		}
+	}
+}
 </style>
