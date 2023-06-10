@@ -1,4 +1,4 @@
 # musicOnline
-uniapp+HBuilderX  
+uniapp+HBuilderX+vue
 Introduction to traditional music with games   
 WeChat mini program
